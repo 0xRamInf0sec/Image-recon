@@ -1,16 +1,19 @@
 import requests
 import pyfiglet
+from halo import Halo
 from bs4 import BeautifulSoup
 ban=pyfiglet.figlet_format("IMAGE R3CON",font="slant")
 print(ban)
 print("                           created by Ramalingasamy M K")
 print()
-R = '\033[31m' # red
-G = '\033[32m' # green
-C = '\033[36m' # cyan
-W = '\033[0m'  # white
+spinner = Halo(text=' Scanning', spinner='dots')
+R = '\033[31m' 
+G = '\033[32m'
+C = '\033[36m'
+W = '\033[0m' 
 image=input(C+"Enter the image path : ")
 try:
+    spinner.start()   
     headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET',
@@ -51,5 +54,6 @@ try:
                     print(C+"[+]"+j)
         if c == 0:
             print(R+"No social Media links associated with this image")
+    spinner.stop()
 except Exception as e:
     print(e)
