@@ -1,3 +1,4 @@
 requests
 pyfiglet
 bs4
+halo
